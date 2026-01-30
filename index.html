@@ -5,24 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container noselect">
-            <div id="author">
-                <h1>Snake Game</h1>
+    <!-- Home Screen -->
+    <div id="home-screen" class="home-screen">
+        <div class="home-container">
+            <h1 class="game-title">🐍 Snake Game</h1>
+            <div class="player-input-section">
+                <label for="player-name">Enter Your Name</label>
+                <input type="text" id="player-name" placeholder="Player Name" maxlength="15">
+                <button id="start-game-btn" class="start-btn">START GAME</button>
             </div>
-        <div id="canvas"></div>
-            <div id="ui">
-                <h2>SCORE</h2>
-                <br>
-                <span id="score">00</span>
+            <!-- Leaderboard -->
+            <div class="leaderboard">
+                <h2>🏆 Leaderboard</h2>
+                <div id="leaderboard-list">
+                    <p class="no-scores">No scores yet. Be the first!</p>
+                </div>
             </div>
-        <button id="replay">
-            <i class="fas fa-play"></i>
-            RESTART
-        </button>
+        </div>
+    </div>
+
+    <!-- Game Screen (hidden initially) -->
+    <div class="container noselect" id="game-container" style="display: none;">
+        <div id="author">
+            <h1>🐍 Snake Game</h1>
+            <p id="player-display"></p>
+        </div>
+        <div class="game-wrapper">
+            <div class="moving-border-container">
+                <div id="canvas"></div>
+            </div>
+            <!-- Side Panel: Controls, Score, Restart stacked vertically -->
+            <div class="side-panel">
+                <!-- On-screen arrow controls -->
+                <div id="controls">
+                    <div class="controls-row">
+                        <button id="btn-up" class="control-btn">▲</button>
+                    </div>
+                    <div class="controls-row">
+                        <button id="btn-left" class="control-btn">◀</button>
+                        <button id="btn-down" class="control-btn">▼</button>
+                        <button id="btn-right" class="control-btn">▶</button>
+                    </div>
+                </div>
+                <!-- Score Card -->
+                <div id="ui">
+                    <h2>SCORE</h2>
+                    <span id="score">00</span>
+                </div>
+                <!-- Restart Button -->
+                <button id="replay">
+                    <i class="fas fa-play"></i>
+                    RESTART
+                </button>
+                <!-- Home Button -->
+                <button id="home-btn">
+                    🏠 HOME
+                </button>
+            </div>
         </div>
     </div>
 </body>
